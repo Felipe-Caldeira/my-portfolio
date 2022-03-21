@@ -1,0 +1,89 @@
+import { Box, Flex, Stack, Spacer, Link, Menu, MenuButton, IconButton, Heading, Container, MenuList, MenuItem  } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
+import TypedTitle from './TypedTitle';
+import Logo from './Logo';
+import React from 'react'
+import { useRouter } from 'next/router';
+
+const LinkTo = ({ href, children } :any) => {
+    const router = useRouter()
+    const active = router.asPath === href
+    return (
+        <NextLink href={href} passHref scroll={false}>
+            <Link
+                p={2}
+                bg={active ? 'purple.500' : undefined}
+            >
+                {children}
+            </Link>
+        </NextLink>
+    )
+}
+
+const NavBar = ({messages, props} :any) => {
+    
+    const titleText = messages ? messages[Math.floor(Math.random() * messages.length)] : "Hello, world!"
+
+    return (
+        <Box 
+            position='fixed'
+            as='nav'
+            bg='rgba(32, 32, 34, 0.73)'
+            w='full'
+            backdropFilter='blur(10px)'
+            fontFamily='Courier Prime, monospace'
+            fontSize="2xl"
+            zIndex='1'
+            {...props}
+        >
+            <Container display='flex' maxW='container.xl' h={12} alignItems="center">
+                <Heading as='h1'><Logo /></Heading>
+                <TypedTitle titleText={titleText} />
+                
+                <Spacer></Spacer>
+                
+                <Stack
+                    direction={{ base: 'column', md:'row'}}
+                    display={{ base: 'none', md: 'flex'}}
+                    width={{ base: 'full', md: 'auto'}}
+                    alignItems = 'center'
+                    mt={{ base: 4, md: 0}}
+                    spacing={4}
+                    mx={2}
+                    fontSize="medium" 
+                >
+                    <LinkTo href="/about">About</LinkTo>
+                    <LinkTo href="/experience">Experience</LinkTo>
+                    <LinkTo href="/work">Work</LinkTo>
+                    <LinkTo href="/contact">Contact</LinkTo>
+                </Stack>
+
+                <Box flex={1}>
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none'}}>
+                        <Menu>
+                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label='Options' />
+                            <MenuList>
+                                <NextLink href='/about' passHref>
+                                    <MenuItem as={Link}>About</MenuItem>
+                                </NextLink>
+                                <NextLink href='/experience' passHref>
+                                    <MenuItem as={Link}>Experience</MenuItem>
+                                </NextLink>
+                                <NextLink href='/work' passHref>
+                                    <MenuItem as={Link}>Work</MenuItem>
+                                </NextLink>
+                                <NextLink href='/contact' passHref>
+                                    <MenuItem as={Link}>Contact</MenuItem>
+                                </NextLink>
+                            </MenuList>
+                        </Menu>
+                    </Box>
+                </Box>
+
+            </Container>
+        </Box>
+    )
+}
+
+export default NavBar
