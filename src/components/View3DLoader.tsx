@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Square } from "@chakra-ui/react"
 
-export const View3DContainer = React.forwardRef(( {children, ...rest} :any, ref:any ) => {
+const View3DContainer = React.forwardRef(( {children, ...rest} :any, ref:any ) => {
     return (
         <Square
             ref={ref}
@@ -19,5 +19,6 @@ const Loader = function() {
         </View3DContainer>
     )
   }
-  
+
+export { View3DContainer }
 export default Loader
