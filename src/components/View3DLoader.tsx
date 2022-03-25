@@ -11,9 +11,10 @@ const View3DContainer = React.forwardRef(( {children, ...rest} :any, ref:any ) =
         </Square>
     )
 })
+View3DContainer.displayName = "View3DContainer";
 
 
-const Loader = function() {
+const Loader = () => {
     return (
         <View3DContainer>
         </View3DContainer>
