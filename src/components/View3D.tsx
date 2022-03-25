@@ -17,7 +17,6 @@ const View3D = ({ model, ...rest }) => {
         // Container dimensions
         const cw = container.clientWidth
         const ch = container.clientHeight
-        console.log(cw, ch)
 
         // Main scene and camera setup
         const scene = new THREE.Scene();
@@ -35,7 +34,10 @@ const View3D = ({ model, ...rest }) => {
         const controls = new OrbitControls(camera, renderer.domElement);
 
         // Add objects to scene
-        const loadedModel = loadGLTFModel(scene, model);
+        loadGLTFModel(scene, model)
+            .then(() => {
+                animate()
+            })
 
         const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
         scene.add(ambientLight);
@@ -55,7 +57,6 @@ const View3D = ({ model, ...rest }) => {
             renderer.render(scene, camera);
         };
 
-        animate();
         return () => {
             container.removeChild(renderer.domElement);
             cancelAnimationFrame(animFrameId)

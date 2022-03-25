@@ -23,7 +23,6 @@ const Main = ({ messages, children } : any) => {
                 <View3D 
                     model='./FlipMimi.glb'
                     size={[280, 480, 640]}
-                    bg="green"
                     />
                 {children}
                 {/* <Footer /> */}

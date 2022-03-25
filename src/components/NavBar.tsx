@@ -35,6 +35,7 @@ const NavBar = ({messages, ...props} :any) => {
             fontFamily='Courier Prime, monospace'
             fontSize="2xl"
             zIndex='1'
+            pt={1}
             {...props}
         >
             <Container display='flex' maxW='container.xl' h={12} alignItems="center">
