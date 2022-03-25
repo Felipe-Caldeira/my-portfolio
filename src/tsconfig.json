@@ -23,7 +23,7 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@layouts/*": ["components/layouts/*"],
-      "@styles/*": ["styles/*"],
+      "@lib/*": ["lib/*"],
       "@public/*": ["public/*"]
     }
   },

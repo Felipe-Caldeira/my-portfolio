@@ -21,7 +21,7 @@ const LinkTo = ({ href, children } :any) => {
     )
 }
 
-const NavBar = ({messages, props} :any) => {
+const NavBar = ({messages, ...props} :any) => {
     
     const titleText = messages ? messages[Math.floor(Math.random() * messages.length)] : "Hello, world!"
 
@@ -59,26 +59,24 @@ const NavBar = ({messages, props} :any) => {
                     <LinkTo href="/contact">Contact</LinkTo>
                 </Stack>
 
-                <Box flex={1}>
-                    <Box ml={2} display={{ base: 'inline-block', md: 'none'}}>
-                        <Menu>
-                            <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label='Options' />
-                            <MenuList>
-                                <NextLink href='/about' passHref>
-                                    <MenuItem as={Link}>About</MenuItem>
-                                </NextLink>
-                                <NextLink href='/experience' passHref>
-                                    <MenuItem as={Link}>Experience</MenuItem>
-                                </NextLink>
-                                <NextLink href='/work' passHref>
-                                    <MenuItem as={Link}>Work</MenuItem>
-                                </NextLink>
-                                <NextLink href='/contact' passHref>
-                                    <MenuItem as={Link}>Contact</MenuItem>
-                                </NextLink>
-                            </MenuList>
-                        </Menu>
-                    </Box>
+                <Box display={{ base: 'inline-block', md: 'none'}} fontSize='medium'>
+                    <Menu>
+                        <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label='Options' />
+                        <MenuList>
+                            <NextLink href='/about' passHref>
+                                <MenuItem as={Link}>About</MenuItem>
+                            </NextLink>
+                            <NextLink href='/experience' passHref>
+                                <MenuItem as={Link}>Experience</MenuItem>
+                            </NextLink>
+                            <NextLink href='/work' passHref>
+                                <MenuItem as={Link}>Work</MenuItem>
+                            </NextLink>
+                            <NextLink href='/contact' passHref>
+                                <MenuItem as={Link}>Contact</MenuItem>
+                            </NextLink>
+                        </MenuList>
+                    </Menu>
                 </Box>
 
             </Container>

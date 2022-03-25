@@ -1,6 +1,7 @@
 import { Box, Container } from "@chakra-ui/react"
 import Head from "next/head"
 import NavBar from '@components/NavBar'
+import View3D from "@components/View3D"
 
 const Main = ({ messages, children } : any) => {
     return (
@@ -17,7 +18,13 @@ const Main = ({ messages, children } : any) => {
 
             <NavBar messages={messages} />
 
+
             <Container maxW="container.md" pt={12} centerContent>
+                <View3D 
+                    model='./FlipMimi.glb'
+                    size={[280, 480, 640]}
+                    bg="green"
+                    />
                 {children}
                 {/* <Footer /> */}
             </Container>
