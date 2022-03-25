@@ -24,6 +24,8 @@ const TypedTitle = ({titleText} : {titleText:string}) => {
             clearInterval(blinkOnOff)
             setText("")
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

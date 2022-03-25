@@ -13,7 +13,7 @@ export const View3DContainer = React.forwardRef(( {children, ...rest} :any, ref:
 })
 
 
-const Loader = () => {
+const Loader = function() {
     return (
         <View3DContainer>
         </View3DContainer>

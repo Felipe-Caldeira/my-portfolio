@@ -61,7 +61,7 @@ const View3D = ({ model, ...rest }) => {
             cancelAnimationFrame(animFrameId)
             renderer.dispose() 
         }
-    }, []);
+    }, [model]);
 
 
     return (
