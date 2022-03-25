@@ -21,7 +21,7 @@ const Main = ({ messages, children } : any) => {
 
             <Container maxW="container.md" pt={12} centerContent>
                 <View3D 
-                    model='./FlipMimi.glb'
+                    model='/FlipMimi.glb'
                     size={[280, 480, 640]}
                     />
                 {children}
