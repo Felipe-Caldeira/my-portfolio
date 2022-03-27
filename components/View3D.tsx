@@ -1,11 +1,15 @@
 import React from 'react'
-import * as THREE from "three";
+import * as THREE from "three"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { loadGLTFModel } from '@lib/gltfLoader';
+import { loadGLTFModel } from '@lib/gltfLoader'
 import {View3DContainer, View3DSpinner} from './View3DLoader'
 
+function easeOutCirc(x: number): number {
+    return Math.sqrt(1 - Math.pow(x - 1, 2));
+}
+
 const View3D = ({ model, ...rest }) => {
-    const mountRef = React.useRef(null);
+    const mountRef = React.useRef(null)
     const [loading, setLoading] = React.useState(true)
     const [_renderer, setRenderer] = React.useState(null)
     // const [_camera, setCamera] = React.useState()
@@ -29,9 +33,9 @@ const View3D = ({ model, ...rest }) => {
         const ch = container.clientHeight
 
         // Main scene and camera setup
-        const scene = new THREE.Scene();
+        const scene = new THREE.Scene()
         const scale = 14
-        let camera = new THREE.OrthographicCamera(
+        const camera = new THREE.OrthographicCamera(
             -scale,
             scale,
             scale,
@@ -44,14 +48,13 @@ const View3D = ({ model, ...rest }) => {
             10,
             30 * Math.cos(0.2 * Math.PI)
         ))
-        // camera = new THREE.PerspectiveCamera(75, cw/ch, 0.1, 1000);
         
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(cw, ch);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+        renderer.setPixelRatio(window.devicePixelRatio)
+        renderer.setSize(cw, ch)
         renderer.outputEncoding = THREE.sRGBEncoding
         setRenderer(renderer)
-        container.appendChild(renderer.domElement);
+        container.appendChild(renderer.domElement)
 
         
         // Make camera rotate around target
@@ -66,41 +69,48 @@ const View3D = ({ model, ...rest }) => {
             setLoading(false)
         })
         
-        const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
-        scene.add(ambientLight);
+        const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+        scene.add(ambientLight)
         
         // Camera controls
-        const controls = new OrbitControls(camera, renderer.domElement);
+        const controls = new OrbitControls(camera, renderer.domElement)
         controls.autoRotate = true
         controls.enableDamping = true
         controls.target = target
 
-        // const pointLight = new THREE.PointLight(0xffffff, 1);
+        // const pointLight = new THREE.PointLight(0xffffff, 1)
         // pointLight.position.copy(target)
-        // const pointLightHelper = new THREE.PointLightHelper(pointLight, 1);
-        // scene.add( pointLightHelper );
+        // const pointLightHelper = new THREE.PointLightHelper(pointLight, 1)
+        // scene.add( pointLightHelper )
         
         // Main animate function
         let animFrameId = null
+        let frame = 0
         const animate = function () {
-            animFrameId = requestAnimationFrame(animate);
-            console.log(camera.position)
-            controls.update()
-            
-            renderer.render(scene, camera);
-        };
+            animFrameId = requestAnimationFrame(animate)
+            if (frame < 100) {
+                camera.zoom = easeOutCirc(frame / 100)
+                camera.updateProjectionMatrix();
+                frame++
+            } else {
+                controls.update()
+            }
+
+            camera.lookAt(target)
+            renderer.render(scene, camera)
+        }
 
         return () => {
-            container.removeChild(renderer.domElement);
+            container.removeChild(renderer.domElement)
             cancelAnimationFrame(animFrameId)
             renderer.dispose() 
         }
-    }, [model]);
+    }, [model])
 
     React.useEffect(() => {
-        window.addEventListener('resize', handleWindowResize, false)
+        window.addEventListener('resize', handleWindowResize)
         return () => {
-          window.removeEventListener('resize', handleWindowResize, false)
+          window.removeEventListener('resize', handleWindowResize)
         }
       }, [_renderer, handleWindowResize])
 
