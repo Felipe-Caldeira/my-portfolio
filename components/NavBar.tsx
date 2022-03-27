@@ -54,7 +54,6 @@ const NavBar = ({messages, ...props} :any) => {
                     mx={2}
                     fontSize="medium" 
                 >
-                    <LinkTo href="/about">About</LinkTo>
                     <LinkTo href="/experience">Experience</LinkTo>
                     <LinkTo href="/work">Work</LinkTo>
                     <LinkTo href="/contact">Contact</LinkTo>
@@ -64,7 +63,7 @@ const NavBar = ({messages, ...props} :any) => {
                     <Menu>
                         <MenuButton as={IconButton} icon={<HamburgerIcon />} variant="outline" aria-label='Options' />
                         <MenuList>
-                            <NextLink href='/about' passHref>
+                            <NextLink href='/' passHref>
                                 <MenuItem as={Link}>About</MenuItem>
                             </NextLink>
                             <NextLink href='/experience' passHref>

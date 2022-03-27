@@ -20,10 +20,11 @@ const Main = ({ messages, children } : any) => {
 
 
             <Container maxW="container.md" pt={12} centerContent>
-                <View3D 
-                    model='/FlipMimi.glb'
-                    size={[280, 480, 640]}
-                    />
+                <View3D model='/FlipMimi.glb' 
+                    size={[600, 640, 800]}
+                    mt={['-120px', '-150px', '-200px']}
+                    mb={['-175px', '-200px', '-250px']}
+                />
                 {children}
                 {/* <Footer /> */}
             </Container>

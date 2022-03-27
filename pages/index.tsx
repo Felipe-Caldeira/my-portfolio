@@ -13,11 +13,11 @@ const messages: string[] = [
 const Home: NextPage = () => {
     return (
         <MainLayout messages={messages}>
-            <Box borderRadius="lg" bg="red" p={3} w="40" textAlign="center">
-                Well hello there fancy people!!!
+            <Box borderRadius="lg" bg="red.600" p={3} w="45" textAlign="center" position='relative'>
+                {'Hiya babe!! :) <3'}
             </Box>
 
-            <Heading as='h2' fontWeight='normal'>About me</Heading>
+            <Heading as='h2' fontWeight='normal'></Heading>
 
         </MainLayout>
     )

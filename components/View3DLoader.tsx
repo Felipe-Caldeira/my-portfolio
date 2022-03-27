@@ -1,13 +1,21 @@
 import React from 'react'
-import { Box, Square } from "@chakra-ui/react"
+import { Spinner, Square } from "@chakra-ui/react"
 
-const View3DContainer = React.forwardRef(( {children, ...rest} :any, ref:any ) => {
+export const View3DSpinner = () => (
+    <Spinner
+        size="xl"
+        position="absolute"
+    />
+)
+
+const View3DContainer = React.forwardRef(({ children, ...rest }: any, ref: any) => {
     return (
         <Square
             ref={ref}
+            position='relative'
             {...rest}
         >
-            { children }
+            {children}
         </Square>
     )
 })
@@ -19,7 +27,7 @@ const Loader = () => {
         <View3DContainer>
         </View3DContainer>
     )
-  }
+}
 
 export { View3DContainer }
 export default Loader
