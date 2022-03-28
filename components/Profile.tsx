@@ -3,9 +3,9 @@ import React from 'react'
 
 const Profile = () => {
     return (
-        <HStack mb={10}>
+        <HStack mb={10} alignSelf='center'>
             <VStack alignItems='left' mr='10'>
-                <Heading as='h2' fontSize={{base: '3xl', md: '4xl'}}>Felipe Caldeira</Heading>
+                <Heading as='h2' fontSize={{base: '2xl', md: '4xl'}}>Felipe Caldeira</Heading>
                 <Text justifyContent='left'>A young man with a dream</Text>
             </VStack>
             <Image

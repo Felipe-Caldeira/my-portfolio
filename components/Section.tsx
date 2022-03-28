@@ -7,6 +7,8 @@ const Section = ({ children, title, ...rest }) => {
     return (
         <Box
             pos='relative'
+            alignSelf='flex-start'
+            my='5'
             {...rest}
         >
             <Heading 

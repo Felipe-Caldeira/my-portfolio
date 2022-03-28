@@ -57,7 +57,7 @@ const NavBar = ({messages, ...props} :any) => {
                     mt={{ base: 4, md: 0}}
                     spacing={4}
                     mx={2}
-                    fontSize="medium" 
+                    fontSize="medium"
                 >
                     <LinkTo href="/experience">Experience</LinkTo>
                     <LinkTo href="/work">Work</LinkTo>

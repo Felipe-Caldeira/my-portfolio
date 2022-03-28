@@ -20,6 +20,14 @@ const Home: NextPage = () => {
                 Testing testing 123!!! This is a test of the fitness gram pacer test.
             </Section>
 
+            <Section title='Bio'>
+                Some bio info
+            </Section>
+
+            <Section title='Resume'>
+                My resume! :O
+            </Section>
+
             <Heading as='h2' fontWeight='normal'></Heading>
 
         </PageLayout>
