@@ -5,6 +5,7 @@ import TypedTitle from './TypedTitle';
 import Logo from './Logo';
 import React from 'react'
 import { useRouter } from 'next/router';
+import { GlobalContext } from "@pages/_app"
 
 const LinkTo = ({ href, children } :any) => {
     const router = useRouter()
@@ -22,8 +23,13 @@ const LinkTo = ({ href, children } :any) => {
 }
 
 const NavBar = ({messages, ...props} :any) => {
-    
-    const titleText = messages ? messages[Math.floor(Math.random() * messages.length)] : "Hello, world!"
+    const [globalState, _] = React.useContext(GlobalContext)
+    const [titleText, setTitleText] = React.useState("Hello, world!")
+
+    React.useEffect(() => {
+        const messages = globalState.messages
+        messages && setTitleText(messages[Math.floor(Math.random() * messages.length)])
+    }, [globalState.messages])
 
     return (
         <Box 
@@ -33,15 +39,14 @@ const NavBar = ({messages, ...props} :any) => {
             w='full'
             backdropFilter='blur(10px)'
             fontFamily='Courier Prime, monospace'
-            fontSize="2xl"
+            fontSize={{base: 'xl' , md: '2xl'}}
             zIndex='1'
             pt={1}
             {...props}
         >
             <Container display='flex' maxW='container.xl' h={12} alignItems="center">
-                <Heading as='h1'><Logo /></Heading>
+                <Heading as='h1' fontSize='inherit'><Logo /></Heading>
                 <TypedTitle titleText={titleText} />
-                
                 <Spacer></Spacer>
                 
                 <Stack

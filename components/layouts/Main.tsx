@@ -1,11 +1,12 @@
+import React from 'react'
 import { Box, Container } from "@chakra-ui/react"
 import Head from "next/head"
 import NavBar from '@components/NavBar'
 import View3D from "@components/View3D"
 
-const Main = ({ messages, children } : any) => {
+const Main = ({ children } : any) => {
     return (
-        <Box as="main" pb={8}>
+        <Box as="main" pb={8} overflowX='hidden'>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="Felipe Caldeira's homepage" />
@@ -16,14 +17,14 @@ const Main = ({ messages, children } : any) => {
                 <title>Felipe Caldeira - Homepage</title>
             </Head>
 
-            <NavBar messages={messages} />
+            <NavBar />
 
 
             <Container maxW="container.md" pt={12} centerContent>
                 <View3D model='/FlipMimi.glb' 
-                    size={[600, 640, 800]}
+                    size={[500, 640, 800]}
                     mt={['-120px', '-150px', '-200px']}
-                    mb={['-175px', '-200px', '-250px']}
+                    mb={['-135px', '-200px', '-250px']}
                 />
                 {children}
                 {/* <Footer /> */}

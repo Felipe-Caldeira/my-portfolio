@@ -8,7 +8,7 @@ const Logo = () => {
         <Text
             fontFamily='Courier Prime, monospace'
             color="purple.400"
-            fontSize="2xl"
+            fontSize='inherit'
             fontWeight='normal'
             as='a'
             display='block'

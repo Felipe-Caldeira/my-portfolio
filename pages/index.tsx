@@ -1,25 +1,28 @@
 import React from 'react'
 import type { NextPage } from 'next'
-import { Box, Container, Heading } from '@chakra-ui/react'
-import MainLayout from '@layouts/Main'
+import { Heading } from '@chakra-ui/react'
+import PageLayout from '@layouts/Page'
+import Section from '@components/Section'
+import Profile from '@components/Profile'
 
 const messages: string[] = [
     "Hello, world!",
     "Welcome! :)",
-    "Nice to see you!",
-    "Make yourself comfortable!"
+    "Hi there!",
 ]
 
 const Home: NextPage = () => {
     return (
-        <MainLayout messages={messages}>
-            <Box borderRadius="lg" bg="red.600" p={3} w="45" textAlign="center" position='relative'>
-                {'Hiya babe!! :) <3'}
-            </Box>
+        <PageLayout messages={messages}>
+            <Profile />
+
+            <Section title='About me!'>
+                Testing testing 123!!! This is a test of the fitness gram pacer test.
+            </Section>
 
             <Heading as='h2' fontWeight='normal'></Heading>
 
-        </MainLayout>
+        </PageLayout>
     )
 }
 

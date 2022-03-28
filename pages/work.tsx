@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
-import MainLayout from '@layouts/Main'
+import PageLayout from '@layouts/Page'
 
 
 const messages: string[] = [
@@ -10,12 +10,11 @@ const messages: string[] = [
 
 const WorkPage: NextPage = () => {
     return (
-        <MainLayout messages={messages}>
+        <PageLayout messages={messages}>
             <Box borderRadius="lg" bg="red" p={3} w="40" textAlign="center">
                 Well hello there fancy people!!!
             </Box>
-
-        </MainLayout>
+        </PageLayout>
     )
 }
 

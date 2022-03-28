@@ -22,6 +22,9 @@ const theme = extendTheme(
     fonts: {
       heading: 'Courier Prime, monospace',
       body: 'Courier Prime, monospace'
+    }, 
+    shadows: {
+      green: '0 0 25px 10px rgba(67, 188, 123, 0.6)'
     }
 })
 
