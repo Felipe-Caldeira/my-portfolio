@@ -13,7 +13,7 @@ const Page = ({ children, messages }) => {
 
     return (
         <Container 
-            maxW='container.sm' 
+            maxW= 'container.sm'
             pos='relative'
             fontSize={{base: 'sm', md: 'md'}}
             centerContent

@@ -1,9 +1,9 @@
-import { Box, Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Heading, Stack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
 const Profile = () => {
     return (
-        <HStack mb={10} alignSelf='center'>
+        <Stack mb={5} alignSelf='center' direction={{base: 'column', md:'row'}} alignItems='center'>
             <VStack alignItems='left' mr='10'>
                 <Heading as='h2' fontSize={{base: '2xl', md: '4xl'}}>Felipe Caldeira</Heading>
                 <Text justifyContent='left'>A young man with a dream</Text>
@@ -18,7 +18,7 @@ const Profile = () => {
                 shadow='green'
                 flexShrink={0}
             />
-        </HStack>
+        </Stack>
     )
 }
 

@@ -22,10 +22,9 @@ const Main = ({ children } : any) => {
 
             <Container maxW="container.md" pt={12} centerContent>
                 <View3D model='/FlipMimi.glb' 
-                    size={{base: '520px', md: '640px', lg: '800px'}}
-                    mt={{base: '-120px', md: '-120px', lg: '-200px'}}
-                    mb={{base: '-160px', md: '-200px', lg: '-250px'}}
-                    mx={{base: '60px', md: 'auto'}}
+                    size={{base: '520px', md: 'container.sm'}}
+                    mt={{base: '-120px', md: '-120px', lg: '-120px'}}
+                    mb={{base: '-160px', md: '-200px', lg: '-200px'}}
                 />
                 {children}
                 {/* <Footer /> */}

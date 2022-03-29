@@ -17,7 +17,8 @@ const Home: NextPage = () => {
             <Profile />
 
             <Section title='About me!'>
-                Testing testing 123!!! This is a test of the fitness gram pacer test.
+                Testing testing 123!!! The FitnessGram™ Pacer Test is a multistage aerobic 
+                capacity test that progressively gets more difficult as it continues. 
             </Section>
 
             <Section title='Bio'>

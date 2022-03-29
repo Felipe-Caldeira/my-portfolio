@@ -22,6 +22,22 @@ const LinkTo = ({ href, children } :any) => {
     )
 }
 
+// const MenuLinkTo = ({ href, title } :any) => {
+//     const router = useRouter()
+//     const active = router.asPath === href
+//     const refEle = React.useRef(null)
+
+//     React.useEffect(() => {
+//         active && refEle.current.focus()
+//     }, [active])
+
+//     return (
+//         <NextLink href={href} passHref>
+//             <MenuItem ref={refEle} as={Link}>{title}</MenuItem>
+//         </NextLink>
+//     )
+// }
+
 const NavBar = ({messages, ...props} :any) => {
     const [globalState, _] = React.useContext(GlobalContext)
     const [titleText, setTitleText] = React.useState("Hello, world!")
