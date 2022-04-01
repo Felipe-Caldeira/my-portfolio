@@ -7,7 +7,12 @@ const messages: string[] = [
     "I wuv you!! <3",
     "You is a cutie ;*",
     "Hola, mi amor! :D",
-    "Hiya my baby!"
+    "Hiya my baby!",
+    "You is da cutest!!",
+    "XOXOXO <3",
+    "Te amo muchisimo!",
+    "My heart is yours <3",
+    "Muahmuahmuah!!! ;*"
 ]
 
 const Home: NextPage = () => {

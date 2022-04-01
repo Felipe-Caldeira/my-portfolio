@@ -15,7 +15,7 @@ const Section = ({ children, title, ...rest }) => {
                 as='h3' 
                 fontSize={{base: '2xl'}} 
                 fontWeight='normal'
-                bgGradient={`linear(to-r, purple.800, #16161a)`}
+                bgGradient={`linear(to-r, purple.800, obsidian)`}
                 px={2}
                 pt={1}
                 w={{base: gradientLength}}
