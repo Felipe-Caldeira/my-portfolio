@@ -9,3 +9,72 @@ datasource db {
   provider = "sqlite"
   url      = env("file:./dev.db")
 }
+
+model Favorites {
+  id          Int      @id @default(autoincrement())
+  games       Game[]
+  movies      Movie[]
+  songs       Song[]
+  shows       Show[]
+  anime       Anime[]
+  foods       Food[]
+  hobbies     Hobby[]
+  places      Place[]
+  candies     Candy[]
+  drinks      Drink[]
+  numbers     Number[]
+  books       Book[]
+  seasons     Season[]
+}
+
+model Game {
+  name String @unique
+}
+
+model Movie {
+  name String @unique
+}
+
+model Song {
+  name String @unique
+}
+
+model Show {
+  name String @unique
+}
+
+model Anime {
+  name String @unique
+}
+
+model Food {
+  name String @unique
+}
+
+model Hobby {
+  name String @unique
+}
+
+model Place {
+  name String @unique
+}
+
+model Candy {
+  name String @unique
+}
+
+model Drink {
+  name String @unique
+}
+
+model Number {
+  name String @unique
+}
+
+model Book {
+  name String @unique
+}
+
+model Season {
+  name String @unique
+}
