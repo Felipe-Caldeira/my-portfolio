@@ -39,7 +39,7 @@ const Home: NextPage = () => {
     return (
         <PageLayout messages={messages}>
             <Box borderRadius="lg" bg="red.600" p={3} w="45" textAlign="center" position='relative'>
-                {`Hiya babe!! :) <3`}
+                {`Hiya babe!! :) <3`} <br /> {'You is da wuv of my life! Stay happ, cutie!! ;*'}
             </Box>
             <Image mt={10} src={randomGif}></Image>
         </PageLayout>
